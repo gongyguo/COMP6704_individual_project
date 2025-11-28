@@ -1,0 +1,197 @@
+Dataset: cora, Nodes: 2708, Edges: 10556, Method: node2vec
+Node2Vec: Training...
+Node2Vec training completed in 17.58 s.
+Node2Vec embeddings: (2708, 64)
+Node Classification (5 runs) - Micro-F1: 0.6362 ± 0.0239, Macro-F1: 0.6137 ± 0.0255
+
+=== Link Prediction (NODE2VEC) - 5 Full Retrain Runs ===
+Node2Vec: Training...
+Node2Vec training completed in 13.44 s.
+Node2Vec embeddings: (2708, 64)
+Run 1 - AUC: 0.8992, AP: 0.9018
+Node2Vec: Training...
+Node2Vec training completed in 14.29 s.
+Node2Vec embeddings: (2708, 64)
+Run 2 - AUC: 0.8947, AP: 0.8772
+Node2Vec: Training...
+Node2Vec training completed in 12.57 s.
+Node2Vec embeddings: (2708, 64)
+Run 3 - AUC: 0.8910, AP: 0.8873
+Node2Vec: Training...
+Node2Vec training completed in 15.44 s.
+Node2Vec embeddings: (2708, 64)
+Run 4 - AUC: 0.8957, AP: 0.8937
+Node2Vec: Training...
+Node2Vec training completed in 17.46 s.
+Node2Vec embeddings: (2708, 64)
+Run 5 - AUC: 0.9021, AP: 0.8958
+
+Link Prediction (node2vec) - AUC: 0.8965 ± 0.0038, AP: 0.8912 ± 0.0084
+Dataset: cora, Nodes: 2708, Edges: 10556, Method: deepwalk
+DeepWalk: Generating walks...
+DeepWalk embeddings: (2708, 64)
+Node Classification (5 runs) - Micro-F1: 0.8015 ± 0.0189, Macro-F1: 0.7935 ± 0.0234
+
+=== Link Prediction (DEEPWALK) - 5 Full Retrain Runs ===
+DeepWalk: Generating walks...
+DeepWalk embeddings: (2708, 64)
+Run 1 - AUC: 0.9408, AP: 0.9501
+DeepWalk: Generating walks...
+DeepWalk embeddings: (2708, 64)
+Run 2 - AUC: 0.9379, AP: 0.9508
+DeepWalk: Generating walks...
+DeepWalk embeddings: (2708, 64)
+Run 3 - AUC: 0.9471, AP: 0.9581
+DeepWalk: Generating walks...
+DeepWalk embeddings: (2708, 64)
+Run 4 - AUC: 0.9398, AP: 0.9534
+DeepWalk: Generating walks...
+DeepWalk embeddings: (2708, 64)
+Run 5 - AUC: 0.9490, AP: 0.9600
+
+Link Prediction (deepwalk) - AUC: 0.9429 ± 0.0043, AP: 0.9545 ± 0.0039
+Dataset: cora, Nodes: 2708, Edges: 10556, Method: grarep
+GraRep: Computing up to order 4...
+  Processing order 1...
+  Processing order 2...
+  Processing order 3...
+  Processing order 4...
+GraRep raw concatenated embeddings: (2708, 256)
+GraRep final embeddings: (2708, 64)
+Node Classification (5 runs) - Micro-F1: 0.3026 ± 0.0000, Macro-F1: 0.0664 ± 0.0000
+
+=== Link Prediction (GRAREP) - 5 Full Retrain Runs ===
+GraRep: Computing up to order 4...
+  Processing order 1...
+  Processing order 2...
+  Processing order 3...
+  Processing order 4...
+GraRep raw concatenated embeddings: (2708, 256)
+GraRep final embeddings: (2708, 64)
+Run 1 - AUC: 0.5000, AP: 0.4999
+GraRep: Computing up to order 4...
+  Processing order 1...
+  Processing order 2...
+  Processing order 3...
+  Processing order 4...
+GraRep raw concatenated embeddings: (2708, 256)
+GraRep final embeddings: (2708, 64)
+Run 2 - AUC: 0.5000, AP: 0.4999
+GraRep: Computing up to order 4...
+  Processing order 1...
+  Processing order 2...
+  Processing order 3...
+  Processing order 4...
+GraRep raw concatenated embeddings: (2708, 256)
+GraRep final embeddings: (2708, 64)
+Run 3 - AUC: 0.5000, AP: 0.4999
+GraRep: Computing up to order 4...
+  Processing order 1...
+Dataset: cora, Nodes: 2708, Edges: 10556, Method: netmf
+NetMF: Computing...
+NetMF embeddings: (2708, 64)
+Node Classification (5 runs) - Micro-F1: 0.8074 ± 0.0112, Macro-F1: 0.7945 ± 0.0157
+Node Classification (5 runs) - Micro-F1: 0.8074 ± 0.0112, Macro-F1: 0.7945 ± 0.0157
+
+=== Link Prediction (NETMF) - 5 Full Retrain Runs ===
+NetMF: Computing...
+NetMF embeddings: (2708, 64)
+Run 1 - AUC: 0.9352, AP: 0.9438
+NetMF: Computing...
+NetMF embeddings: (2708, 64)
+Run 2 - AUC: 0.9262, AP: 0.9386
+NetMF: Computing...
+NetMF embeddings: (2708, 64)
+Run 3 - AUC: 0.9342, AP: 0.9478
+NetMF: Computing...
+NetMF embeddings: (2708, 64)
+Run 4 - AUC: 0.9325, AP: 0.9432
+NetMF: Computing...
+NetMF embeddings: (2708, 64)
+Run 5 - AUC: 0.9360, AP: 0.9475
+
+Link Prediction (netmf) - AUC: 0.9328 ± 0.0035, AP: 0.9442 ± 0.0034
+Dataset: cora, Nodes: 2708, Edges: 10556, Method: gcn
+GCN: Training (unsupervised link prediction)...
+   Epoch 020, Loss: 0.9462
+   Epoch 040, Loss: 0.8188
+   Epoch 060, Loss: 0.7908
+   Epoch 080, Loss: 0.7701
+   Epoch 100, Loss: 0.7656
+GCN embeddings: (2708, 64)
+Node Classification (5 runs) - Micro-F1: 0.7616 ± 0.0129, Macro-F1: 0.7511 ± 0.0168
+
+=== Link Prediction (GCN) - 5 Full Retrain Runs ===
+GCN: Training (unsupervised link prediction)...
+GCN embeddings: (2708, 64)
+Run 1 - AUC: 0.8989, AP: 0.9110
+GCN: Training (unsupervised link prediction)...
+GCN embeddings: (2708, 64)
+Run 2 - AUC: 0.8849, AP: 0.8856
+GCN: Training (unsupervised link prediction)...
+GCN embeddings: (2708, 64)
+Run 3 - AUC: 0.8977, AP: 0.9041
+GCN: Training (unsupervised link prediction)...
+GCN embeddings: (2708, 64)
+Run 4 - AUC: 0.8913, AP: 0.8984
+GCN: Training (unsupervised link prediction)...
+GCN embeddings: (2708, 64)
+Run 5 - AUC: 0.8965, AP: 0.9034
+
+Link Prediction (gcn) - AUC: 0.8939 ± 0.0052, AP: 0.9005 ± 0.0085
+Dataset: cora, Nodes: 2708, Edges: 10556, Method: gat
+GAT: Training...
+Epoch 020, Loss: 1.2797
+Epoch 040, Loss: 1.2419
+Epoch 060, Loss: 1.2365
+Epoch 080, Loss: 1.2413
+Epoch 100, Loss: 1.2274
+GAT embeddings: (2708, 64)
+Node Classification (5 runs) - Micro-F1: 0.3808 ± 0.0095, Macro-F1: 0.2000 ± 0.0048
+
+=== Link Prediction (GAT) - 5 Full Retrain Runs ===
+GAT: Training...
+GAT embeddings: (2708, 64)
+Run 1 - AUC: 0.6154, AP: 0.6506
+GAT: Training...
+GAT embeddings: (2708, 64)
+Run 2 - AUC: 0.6101, AP: 0.6352
+GAT: Training...
+GAT embeddings: (2708, 64)
+Run 3 - AUC: 0.6016, AP: 0.6264
+GAT: Training...
+GAT embeddings: (2708, 64)
+Run 4 - AUC: 0.6063, AP: 0.6372
+GAT: Training...
+GAT embeddings: (2708, 64)
+Run 5 - AUC: 0.6120, AP: 0.6390
+
+Link Prediction (gat) - AUC: 0.6091 ± 0.0048, AP: 0.6377 ± 0.0077
+Dataset: cora, Nodes: 2708, Edges: 10556, Method: gin
+GIN: Training (unsupervised link prediction)...
+   Epoch 020, Loss: 1.1770
+   Epoch 040, Loss: 1.0669
+   Epoch 060, Loss: 1.0059
+   Epoch 080, Loss: 0.9571
+   Epoch 100, Loss: 0.9255
+GIN embeddings: (2708, 64)
+Node Classification (5 runs) - Micro-F1: 0.4738 ± 0.0103, Macro-F1: 0.3679 ± 0.0072
+
+=== Link Prediction (GIN) - 5 Full Retrain Runs ===
+GIN: Training (unsupervised link prediction)...
+GIN embeddings: (2708, 64)
+Run 1 - AUC: 0.7231, AP: 0.7586
+GIN: Training (unsupervised link prediction)...
+GIN embeddings: (2708, 64)
+Run 2 - AUC: 0.7103, AP: 0.7497
+GIN: Training (unsupervised link prediction)...
+GIN embeddings: (2708, 64)
+Run 3 - AUC: 0.7022, AP: 0.7436
+GIN: Training (unsupervised link prediction)...
+GIN embeddings: (2708, 64)
+Run 4 - AUC: 0.7027, AP: 0.7473
+GIN: Training (unsupervised link prediction)...
+GIN embeddings: (2708, 64)
+Run 5 - AUC: 0.7092, AP: 0.7450
+
+Link Prediction (gin) - AUC: 0.7095 ± 0.0075, AP: 0.7488 ± 0.0053
