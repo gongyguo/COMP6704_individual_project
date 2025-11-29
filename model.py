@@ -124,7 +124,6 @@ class GraphEmbeddingFramework:
         from scipy.sparse.linalg import svds
         U, S, _ = svds(M, k=min(self.embedding_dim, M.shape[0]-1))
         self.embeddings = U @ np.diag(np.sqrt(S))
-        np.save("./vector/cora_netmf.npy",self.embeddings)
         print(f"NetMF embeddings: {self.embeddings.shape}")
         return self.embeddings
 
@@ -553,14 +552,35 @@ class GraphEmbeddingFramework:
             f"AUC: {auc_mean:.4f} ± {auc_std:.4f}, "
             f"AP: {ap_mean:.4f} ± {ap_std:.4f}")
 
-    def visualize_tsne(self, labels: np.ndarray = None, perplexity: int = 30, dataset: str = "cora", method: str = "node2vec"):
+    def visualize_tsne(self, labels: np.ndarray = None, perplexity: int = 30,
+                    dataset: str = "cora", method: str = "node2vec", dpi: int = 200):
 
         if self.embeddings is None:
             raise ValueError("Embeddings not trained.")
-        tsne = TSNE(n_components=2, perplexity=min(perplexity, len(self.embeddings)-1), random_state=42)
+
+        tsne = TSNE(n_components=2,
+                    perplexity=min(perplexity, len(self.embeddings)-1),
+                    random_state=42,
+                    init='pca',          
+                    learning_rate='auto')
         emb_2d = tsne.fit_transform(self.embeddings)
-        plt.figure(figsize=(8, 8))
-        scatter = plt.scatter(emb_2d[:, 0], emb_2d[:, 1], c=labels, cmap='tab10', alpha=0.7)
-        # plt.colorbar(scatter)
-        plt.tight_layout()
-        plt.savefig(f'tsne_{method}_{dataset}.png',dpi=600)
+
+        plt.figure(figsize=(7, 7))                   
+        scatter = plt.scatter(emb_2d[:, 0], emb_2d[:, 1],
+                            c=labels,
+                            cmap='tab10',
+                            s=12,                   
+                            alpha=0.8,
+                            edgecolors='none')
+
+        plt.axis('off')                               
+        plt.xticks([]), plt.yticks([])                 
+        plt.gca().set_position([0, 0, 1, 1])           
+
+        save_path = f'tsne_{method}_{dataset}.png'
+        plt.savefig(save_path,
+                    dpi=dpi,                    
+                    bbox_inches='tight',
+                    pad_inches=0,
+                    transparent=False)          
+        plt.close()

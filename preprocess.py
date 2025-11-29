@@ -45,13 +45,11 @@ def generate_link_splits(adj_csr: sp.csr_matrix, test_ratio: float = 0.2, n_spli
         train_labels = all_labels[train_idx]
         test_labels = all_labels[test_idx]
 
-        # 4. 分离正负
         pos_train = train_edges[train_labels == 1]
         neg_train = train_edges[train_labels == 0]
         pos_test = test_edges[test_labels == 1]
         neg_test = test_edges[test_labels == 0]
 
-        # 5. 训练图
         adj_train = sp.csr_matrix(
             (np.ones(len(pos_train)), (pos_train[:, 0], pos_train[:, 1])),
             shape=adj_csr.shape
@@ -66,7 +64,6 @@ def generate_link_splits(adj_csr: sp.csr_matrix, test_ratio: float = 0.2, n_spli
         }
         splits.append(split)
 
-        # 保存
         path = os.path.join(save_dir, f"link_{i}.pkl")
         with open(path, 'wb') as f:
             pickle.dump(split, f)
@@ -108,8 +105,8 @@ if __name__ == "__main__":
     dataset_to_nnodes = {'cora': 2708,'citeseer': 3312,'wiki': 2405,'blogcatalog': 5196}
     n_nodes = dataset_to_nnodes[args.dataset]
     adj = sp.coo_matrix((np.ones(edgelist.shape[0]), (edgelist[:, 0], edgelist[:, 1])), shape=(n_nodes, n_nodes))
-    adj = adj + adj.T  # Make it undirected
-    adj[adj > 1] = 1  # Remove multi-edges
+    adj = adj + adj.T 
+    adj[adj > 1] = 1  
     adj = adj.tocsr()
     n_nodes = adj.shape[0]
     m_edges = adj.nnz
