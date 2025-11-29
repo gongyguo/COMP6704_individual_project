@@ -1,4 +1,4 @@
-# COMP6704 Individual Project: Graph Representation Learning  
+# COMP6704 Individual Project:
 
 **Graph Embedding as Optimization: From Random Walks to Neural Message Passing**
 
